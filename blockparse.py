@@ -65,7 +65,6 @@ def dumpBlocks(collinearitydict,refchrom):
 def assignSubgenomes(refchrom,collinearitydict,chrreg = 'Zm\d+'):
     sublist = [Vividict(),Vividict()]
     blockdump = dumpBlocks(collinearitydict,refchrom)
-    #while blockdump:
     for i,sub in enumerate(sublist):
         if not sub:
             for block in blockdump:
