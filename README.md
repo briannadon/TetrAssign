@@ -10,14 +10,16 @@ This software cannot align more than 2 genomes at a time. It does not offer any 
 ## Installation
 ### Requirements
 * UNIX, Linux, or Mac OS machine
-...Windows is not supported currently.
+... Windows is not supported currently.
 * Python 2.7
 * NCBI Command-line blast+ version 2.2.18 (other versions untested): ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.18/
 * MCScanX (http://chibba.pgml.uga.edu/mcscan2/)
-...Also, ensure MCScanX is included in your PATH: `export PATH=$PATH:/path/to/MCScanX`
+... Also, ensure MCScanX is included in your PATH: `export PATH=$PATH:/path/to/MCScanX`
 ### Installing
 After obtaining the required dependencies (see "Requirements" above), use:
-```git clone https://github.com/briannadon/TetrAssign.git``` 
+```
+git clone https://github.com/briannadon/TetrAssign.git
+```
 Ensure MCScanX is in your PATH (see above).
 ## Running
  
