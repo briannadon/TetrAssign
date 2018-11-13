@@ -43,5 +43,5 @@ After some time running, 10 files will be produced with the names of the sorghum
 ### Outputs
 A set of text files describing the imputed ancient subgenomes for the tetraploid species. Each is a tab-separated file with the first column showing the genes of the reference chromosome, in order, and two columns to the right of that, each representing one imputed subgenome.  The assignment of which subgenome goes to which of the 2 right columns is arbitrary.
 
-### License, use, etc
+## License, use, etc
 This software is offered with no guarantees of any sort and support is minimal. It is free to use and distribute with attribution.
