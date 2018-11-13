@@ -1,4 +1,4 @@
-# TetrAssign
+# TetrAssign: software for reconstructing paleotetraploid subgenomes
 
 ## Introduction
 ### What does TetrAssign do?
@@ -10,11 +10,11 @@ This software cannot align more than 2 genomes at a time. It does not offer any 
 ## Installation
 ### Requirements
 * UNIX, Linux, or Mac OS machine
-... Windows is not supported currently.
+  * Windows is not supported currently.
 * Python 2.7
 * NCBI Command-line blast+ version 2.2.18 (other versions untested): ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.18/
 * MCScanX (http://chibba.pgml.uga.edu/mcscan2/)
-... Also, ensure MCScanX is included in your PATH, for example: `export PATH=$PATH:/path/to/MCScanX`
+  * Also, ensure MCScanX is included in your PATH, for example: `export PATH=$PATH:/path/to/MCScanX`. You can test if this worked by typing `MCScanX` to see if the command is callable 
 ### Installing
 After obtaining the required dependencies (see "Requirements" above), use:
 ```
@@ -24,11 +24,12 @@ Ensure MCScanX is in your PATH (see above).
 ## Running
 
 For a full list of the command-line options that TetrAssign uses, use `./Tetrassign.py -h` or `./TetraAssign.py --help`.
+To start, find wherever you cloned the github package and enter the directory: `cd TetrAssign/`
 
 ### Inputs
 Tetrassign needs four files as inputs: A FASTA file containing all the genes in the genome (CDS or mRNA, Protein support coming soon), and a BED file containing coordinates for those genes for both the reference and putative paleotetraploid genomes. Before running the program, it is highly recommended that you **make sure the gene names match EXACTLY between the BED and FASTA files. This is the source of most errors.** Furthermore, you should ensure the BED files use unique names for the chromosomes of each species. For instance, if you are using maize and sorghum, you would want to name maize's chromosomes e.g. "Zm01, Zm02" and not "Chr01, Chr02".
 
-### Command
+### Command line
 Running `TetrAssign.py -h` will print:
 ```
 usage: TetrAssign.py [-h] [-tf TETFASTAFILE] [-rf REFFASTAFILE]
@@ -38,10 +39,10 @@ The `-rf` and `-tf` options specify what the reference (diploid) FASTA and tetra
 ```
 Tetrassign.py -tf exampledata/Zm.cds.fa -rf exampledata/Sb.cds.fa -tb exampledata/Zm.bed -rb exampledata/Sb.bed
 ```
-After some time running, 10 files will be produced with the names of the sorghum chromosomes ("Sb01" etc) and the subgenomes ("Sb01.subs.txt").
+After some time running, 10 files will be produced with the names of the sorghum chromosomes ("Sb01" etc) and the subgenomes ("Sb01.subs.txt").  On a typical (quite powerful) compute cluster, running TetrAssign takes only a few minutes. 
 
 ### Outputs
-A set of text files describing the imputed ancient subgenomes for the tetraploid species. Each is a tab-separated file with the first column showing the genes of the reference chromosome, in order, and two columns to the right of that, each representing one imputed subgenome.  The assignment of which subgenome goes to which of the 2 right columns is arbitrary.
+The resulting output is a set of text files describing the imputed ancient subgenomes for the tetraploid species. The files will be named first by the diploid genome's two-letter indication (e.g. "Sb") followed by a two-number chromosome (e.g. "Sb01"). Each file is a tab-separated file with the first column showing the genes of the reference chromosome, in order, and two columns to the right of that, each representing one imputed subgenome.  The assignment of which subgenome goes to which of the 2 right columns is arbitrary. Because duplicate genes are lost or rearranged, some cells will be empty, causing viewing these files in a typical text editor to be difficult to interpret. It is recommended to view these files in, for example, Microsoft Excel or another spreadsheet software for visual clarity.
 
 ## License, use, etc
 This software is offered with no guarantees of any sort and support is minimal. It is free to use and distribute with attribution.
