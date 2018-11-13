@@ -5,7 +5,7 @@
 TetrAssign is a python-based package that attempts to reconstruct the subgenomes of ancient paleotetraploid genomes.
 It uses a single known paleotetraploid genome and a single close relative lacking that paleotetetraploidy to try to build a parsimonious reconstruction of what the tetraploid subgenomes looked like immediately after the duplication event using the non-duplicated relative as a reference. It only needs two FASTA files (the genes/CDSs/Proteins to be aligned) and two GFF/BED files (the genes' coordinates in the genomes). TetrAssign reconstructs using the assumption that the fewest number of inter- and intra-chromosomal rearrangements (fusions, fissions, translocations, inversions, etc) have occurred. 
 ### What doesn't it do?
-This software cannot align more than 2 genomes at a time. It does not offer any kind of likelihood statistics for the putative chromosome-scale reconstructions it outputs. It cannot handle paleohexaploidies, octaploidies, or anything more than a tetraploidy (duplication). The assumptions underlying the method used by TetrAssign cannot currently be modified. 
+This software cannot align more than 2 genomes at a time. It does not offer any kind of likelihood or descriptive statistics for the putative chromosome-scale reconstructions it outputs. It cannot handle paleohexaploidies, octaploidies, or anything more than a tetraploidy (duplication). The assumptions underlying the method used by TetrAssign cannot currently be modified. 
 
 ## Installation
 ### Requirements
@@ -42,3 +42,6 @@ After some time running, 10 files will be produced with the names of the sorghum
 
 ### Outputs
 A set of text files describing the imputed ancient subgenomes for the tetraploid species. Each is a tab-separated file with the first column showing the genes of the reference chromosome, in order, and two columns to the right of that, each representing one imputed subgenome.  The assignment of which subgenome goes to which of the 2 right columns is arbitrary.
+
+### License, use, etc
+This software is offered with no guarantees of any sort and support is minimal. It is free to use and distribute with attribution.
