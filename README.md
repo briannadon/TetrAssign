@@ -34,9 +34,9 @@ Running `TetrAssign.py -h` will print:
 usage: TetrAssign.py [-h] [-tf TETFASTAFILE] [-rf REFFASTAFILE]
                      [-rb REFBEDFILE] [-tb TETBEDFILE]
 ```
-The `-rf` and `-tf` options specify what the reference (diploid) FASTA and tetraploid FASTA files are respectively, with `-rb` and `-tb` specifying the reference and tetraploid BED coordinate files are.  These are required. Running the following will use the example data to build subgenomes for maize (paleotetraploid) against sorghum (diploid reference) chromosomes:
+The `-rf` and `-tf` options specify the reference (diploid) FASTA and tetraploid FASTA files respectively, with `-rb` and `-tb` specifying the reference and tetraploid BED coordinate files.  These are required. Running the following will use the example data to build subgenomes for maize (paleotetraploid) against sorghum (diploid reference) chromosomes:
 ```
-Tetrassign.py -tf exampledata/Zm.cds.fa -rf exampledata/Sb.cds.fa -tb exampledata/Zm.bed -rb exampledata/Sb.bed
+./Tetrassign.py -tf exampledata/Zm.cds.fa -rf exampledata/Sb.cds.fa -tb exampledata/Zm.bed -rb exampledata/Sb.bed
 ```
 After some time running, 10 files will be produced with the names of the sorghum chromosomes ("Sb01" etc) and the subgenomes ("Sb01.subs.txt").
 

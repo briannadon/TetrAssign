@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from sys import argv
 from glob import glob
 import re
