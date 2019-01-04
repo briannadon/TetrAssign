@@ -66,7 +66,14 @@ def catfiles(file1,file2,out):
                     outfile.write(line)
 
 if __name__ == "__main__":
-    parser= argparse.ArgumentParser(description = "Placeholder")
+    parser= argparse.ArgumentParser(description = 
+            """TetrAssign: a lightweight tool to parsimoniously reconstruct diploid 
+            ancestral genome states in paleotetraploid genomes. 
+            Requires NCBI Blast 2.2.18 and MCScanX. 
+            Ensure you have appropriately formatted BED and Protein/CDS FASTA files 
+            for both your paleotetraploid and diploid species before starting.
+            """
+            )
     parser.add_argument("-tf", "--tetraploid-fasta", action="store",dest='tetfastafile')
     parser.add_argument("-rf", "--reference-fasta",dest='reffastafile')
     parser.add_argument("-rb",action="store",dest='refbedfile')
