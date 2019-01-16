@@ -93,3 +93,4 @@ if __name__ == "__main__":
     reformatblast('blastout.txt',newnamedict)
     mcscan()
     blockparse.blockparse('tmp.collinearity','tmp.gff',refprefix,tetprefix)
+    subprocess.call(['rm','tmp.*'])
